@@ -14,12 +14,15 @@ class HospitalPatient(models.Model):
     ], string='Gender')
     ref = fields.Char(string='Reference', required=True, copy=False, readonly=True,
                       index=True, default=lambda self: _('New'))
+    phone = fields.Char(string='Phone')
     age_group = fields.Selection(
         [
             ('minor', 'Minor'),
             ('major', 'Major'),
         ], string='Age Group', compute='age_group_set')
     note = fields.Text(string='Description')
+    doctor_note = fields.Text(string='Note')
+    pharmacy = fields.Text(string='pharmacy')
 
     image = fields.Binary(string='Image')
     sl_no = fields.Char(string='Patient ID', required=True, copy=False, readonly=True,
