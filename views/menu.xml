@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<!--    <top menu/>-->
+    <menuitem id="hospital_root_menu"
+              name="Hospital"
+              sequence="0"/>
+
+<!--    <sub menu/>-->
+    <menuitem id="patient_root_menu"
+              name="Patient Details"
+              parent="hospital_root_menu"
+              sequence="0"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="appointment_root" name="Appointment Details" parent="hospital_root_menu"  sequence="1"/>
+
+</odoo>
