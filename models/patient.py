@@ -43,6 +43,7 @@ class HospitalPatient(models.Model):
         # Call the original create method
         return super(HospitalPatient, self).create(vals)
 
+    # for smart button and this is type object
     @api.multi
     def open_patient_appointment(self):
         return  {
@@ -69,3 +70,20 @@ class HospitalPatient(models.Model):
         for rec in self:
             if rec.age <= 0:  # Check if the age is less than or equal to 0
                 raise ValidationError(_('The age must be greater than 0.'))
+
+    # for button actions
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
+    def action_confirm(self):
+        for rec in self:
+            rec.state = 'confirm'
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'done'
+
+    def action_cancel(self):
+        for rec in self:
+            rec.state = 'cancel'

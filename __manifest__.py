@@ -18,6 +18,10 @@
         'views/menu.xml',
         'views/patient_view.xml',
         'views/appointment_view.xml',
+
+        # report file
+        'reports/patient_report.xml',
+        'reports/report_template.xml',
     ],
     'installable':True,
     'application': True,

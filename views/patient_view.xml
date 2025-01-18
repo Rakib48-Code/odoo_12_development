@@ -24,11 +24,16 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                     <field name="state" widget="statusbar"/>
+                    <button name="action_draft" string="Draft" type="object" class="oe_highlight"/>
+                    <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight"/>
+                    <button name="action_cancel" string="Cancel" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button class="oe_stat_button" type="object" name="open_patient_appointment" icon="fa-calendar" string="Appointments">
+                        <button class="oe_stat_button" type="object" name="open_patient_appointment" icon="fa-calendar"
+                                string="Appointments">
                         </button>
                     </div>
                     <div class="oe_title">
